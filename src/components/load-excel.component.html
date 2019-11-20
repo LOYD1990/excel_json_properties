@@ -1,0 +1,15 @@
+<span>Elige un archivo</span>
+<input type="file" (change)="onFileChange($event)" />
+<br />
+<input type="button" (click)="createJSON()" value="Convertir" />
+
+<div class="result">
+    <div *ngIf="workSheet">
+        <p class="espJson" *ngIf="espJSON">{{espJSON | json}}</p>
+        <br/>
+        <div class="porJson" *ngIf="porJSON">{{porJSON | json}}</div>
+    </div>
+    <span *ngIf="!workSheet">
+        Documento no cargado
+    </span>
+</div>
